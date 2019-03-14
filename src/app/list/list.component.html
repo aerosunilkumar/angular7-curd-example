@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+      >
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.name }}</td>
+      <td>
+        <a class="btn btn-success" routerLink="/edit/{{ todo.id }}"
+          ><span class="glyphicon glyphicon-pencil"></span>Edit</a
+        >
+        <button (click)="onDelete(todo.id)" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash"></span>Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
